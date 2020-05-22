@@ -17,6 +17,7 @@
 #' @param penalty how sensitive is the change point algorithm, lower is more
 #' sensitve (< 1, default = 0.5)
 #' @param out_dir output directory where to store downloaded data 
+#' @param span fixed span, NULL by default
 #' (default = tempdir())
 #' @param ... additional parameters to be forwarded to the phenophases()
 #' function, used internally in the routine
@@ -50,6 +51,7 @@ process_phenocam <- function(
   penalty = 0.5,
   out_dir = tempdir(),
   internal = FALSE,
+  span = NULL,
   ...
 ){
   
@@ -105,7 +107,8 @@ process_phenocam <- function(
     # calculations should smoothed data be provided
     df <- try(suppressWarnings(
       smooth_ts(df,
-                force = TRUE)),
+                force = TRUE,
+                span = span)),
              silent = TRUE)
     
     # trap errors
