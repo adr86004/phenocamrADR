@@ -1,0 +1,12 @@
+^\.travis\.yml$
+^.*\.Rproj$
+^\.Rproj\.user$
+^README\.md$
+^_config\.yml$
+^cran-comments\.md$
+^CONDUCT\.md$
+^NEWS\.md$
+^LICENSE$
+^docs$
+^phenocam-logo\.*$
+^.*-logo\..*$
