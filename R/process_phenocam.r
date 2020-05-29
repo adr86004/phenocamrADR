@@ -18,6 +18,7 @@
 #' sensitve (< 1, default = 0.5)
 #' @param out_dir output directory where to store downloaded data 
 #' @param span fixed span, NULL by default
+#' @param plot_optim whether to plot optimal
 #' (default = tempdir())
 #' @param ... additional parameters to be forwarded to the phenophases()
 #' function, used internally in the routine
@@ -52,6 +53,7 @@ process_phenocam <- function(
   out_dir = tempdir(),
   internal = FALSE,
   span = NULL,
+  plot_optim = FALSE,
   ...
 ){
   
@@ -108,6 +110,7 @@ process_phenocam <- function(
     df <- try(suppressWarnings(
       smooth_ts(df,
                 force = TRUE,
+                plot_optim = plot_optim,
                 span = span)),
              silent = TRUE)
     

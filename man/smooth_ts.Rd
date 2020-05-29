@@ -10,6 +10,8 @@ smooth_ts(
     "rcc_90"),
   force = TRUE,
   internal = TRUE,
+  span = NULL,
+  plot_optim = FALSE,
   out_dir = tempdir()
 )
 }
@@ -22,6 +24,10 @@ smooth_ts(
 
 \item{internal}{return a data structure if given a file on disk
 (\code{TRUE} / \code{FALSE} = default)}
+
+\item{span}{fixed span, NULL by default}
+
+\item{plot_optim}{whether to plot optimal}
 
 \item{out_dir}{output directory where to store data}
 }

@@ -16,6 +16,8 @@ process_phenocam(
   penalty = 0.5,
   out_dir = tempdir(),
   internal = FALSE,
+  span = NULL,
+  plot_optim = FALSE,
   ...
 )
 }
@@ -41,10 +43,14 @@ process_phenocam(
 \item{penalty}{how sensitive is the change point algorithm, lower is more
 sensitve (< 1, default = 0.5)}
 
-\item{out_dir}{output directory where to store downloaded data 
-(default = tempdir())}
+\item{out_dir}{output directory where to store downloaded data}
 
 \item{internal}{allow for the data element to be returned to the workspace}
+
+\item{span}{fixed span, NULL by default}
+
+\item{plot_optim}{whether to plot optimal
+(default = tempdir())}
 
 \item{...}{additional parameters to be forwarded to the phenophases()
 function, used internally in the routine}

@@ -95,24 +95,6 @@ test_that("check merge routines",{
                    phenophase = FALSE)
  
  
- # merge data with modis
- expect_type(merge_modis(
-   file.path(tempdir(),
-             "harvard_DB_1000_3day.csv"),
-   product = "MOD13Q1",
-   band = "250m_16_days_NDVI"
- ),
- "list")
- 
- # merge data with modis
- # no scale
- expect_type(merge_modis(
-   file.path(tempdir(),
-             "harvard_DB_1000_3day.csv"),
-   product = "MCD12Q1",
-   band = "LC_Type1"
- ),
- "list")
  
  # merge with daymet
  expect_type(merge_daymet(

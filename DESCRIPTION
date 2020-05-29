@@ -22,7 +22,6 @@ Imports:
     stats,
     memoise,
     daymetr,
-    MODISTools
 Suggests:
     shiny,
     covr,
@@ -36,5 +35,5 @@ Suggests:
 License: AGPL-3
 LazyData: true
 ByteCompile: true
-RoxygenNote: 7.0.0
+RoxygenNote: 7.1.0
 VignetteBuilder: knitr

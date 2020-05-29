@@ -10,6 +10,7 @@
 #' (\code{TRUE} / \code{FALSE} = default)
 #' @param out_dir output directory where to store data 
 #' @param span fixed span, NULL by default
+#' @param plot_optim whether to plot optimal
 #' @return An PhenoCam data structure or file with optimally smoothed time series
 #' objects added to the original file. Smoothing is required for `phenophase()`
 #' and `transition_dates()` functions.
@@ -47,6 +48,7 @@ smooth_ts = function(data,
                      force = TRUE,
                      internal = TRUE,
                      span = NULL,
+                     plot_optim = FALSE,
                      out_dir = tempdir()) {
   
   # if the data is not a data frame, load
@@ -225,7 +227,7 @@ smooth_ts = function(data,
                           suppressWarnings(
                             optimal_span(x = as.numeric(dates[loc]),
                                          y = gap_filled[loc],
-                                         plot = FALSE)), 
+                                         plot = plot_optim)), 
                           span)
       
       fit = suppressWarnings(
@@ -239,7 +241,7 @@ smooth_ts = function(data,
                           suppressWarnings(
                             optimal_span(x = as.numeric(dates),
                                          y = gap_filled,
-                                         plot = FALSE)),
+                                         plot = plot_optim)),
                           span)
       
       fit = suppressWarnings(
