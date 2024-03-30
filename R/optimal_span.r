@@ -24,7 +24,7 @@
 optimal_span = function(y,
                         x = NULL,
                         weights = NULL,
-                        step = 0.001,
+                        step = 0.01,
                         label = NULL,
                         plot = FALSE){
 
