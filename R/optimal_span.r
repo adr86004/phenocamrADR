@@ -24,7 +24,7 @@
 optimal_span = function(y,
                         x = NULL,
                         weights = NULL,
-                        step = 0.1,
+                        step = 0.001,
                         label = NULL,
                         plot = FALSE){
 
@@ -82,7 +82,7 @@ optimal_span = function(y,
   }
 
   # parameter range
-  span = seq(0.1, 0.3, by = step)
+  span = seq(0.001, 0.3, by = step)
 
   # temporary AIC matrix, lapply loop
   # (instead of for loop) cleaner syntax
